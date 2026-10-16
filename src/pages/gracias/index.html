@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <title>¡Listo! · Liga PuraSport</title>
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Liga PuraSport">
+  <meta property="og:url" content="{{siteUrl}}/gracias/">
+<!--@include head-->
+</head>
+<body>
+<!--@include header-->
+<main id="contenido" class="relative overflow-hidden">
+  <div class="glow absolute inset-0" aria-hidden="true"></div>
+  <section class="wrap relative max-w-3xl py-16 sm:py-24">
+    <div class="mb-6 w-16"><img src="{{ROOT}}assets/gotas-blanco.svg" alt="" class="w-16"></div>
+    <span class="eyebrow">Pre-inscripción recibida</span>
+    <h1 class="mt-5 font-display text-5xl font-black leading-[.98] tracking-tight sm:text-6xl" data-gracias-titulo>¡Ya estás dentro!</h1>
+    <p class="lead" data-gracias-texto>Te escribiremos por WhatsApp para confirmar los siguientes pasos.</p>
+    <div class="mt-6 hidden rounded-2xl border border-brand/40 bg-brand/10 p-5" data-gracias-cats></div>
+
+    <div class="mt-10 card">
+      <p class="text-sm font-bold uppercase tracking-[.16em] text-white/50">Siguiente paso</p>
+      <h2 class="mt-1 font-display text-2xl font-black">Escríbenos ahora y adelanta tu lugar</h2>
+      <p class="mt-2 text-white/70">Un mensaje por WhatsApp y te respondemos con calendario, categorías y cómo registrar a los atletas.</p>
+      <a class="btn-wa mt-5 w-full sm:w-auto" href="https://wa.me/{{whatsappNumber}}" data-wa-gracias data-track="wa_gracias">Escribir por WhatsApp</a>
+    </div>
+
+    <div class="mt-4 card">
+      <h2 class="font-display text-2xl font-black" data-share-titulo>¿Conoces a otra familia o entrenador?</h2>
+      <p class="mt-2 text-white/70">Mientras más equipos haya en cada categoría, más partidos juegan todos.</p>
+      <div class="mt-5 flex flex-col gap-3 sm:flex-row">
+        <button type="button" class="btn-primary" data-share>Compartir la Liga</button>
+        <a class="btn-ghost" href="{{instagram}}" target="_blank" rel="noopener">Seguir {{handle}}</a>
+      </div>
+    </div>
+  </section>
+</main>
+<!--@include footer-->
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var p=new URLSearchParams(location.search), tipo=p.get('tipo')||'';
+  var d=(window.LigaPuraSport&&LigaPuraSport.store.get('preinscripcion'))||null;
+  var set=function(sel,html){var el=document.querySelector(sel); if(el) el.innerHTML=html;};
+  var msg='Hola PuraSport, acabo de pre-inscribirme en la Liga.';
+  if(tipo==='entrenador'){
+    set('[data-gracias-titulo]','¡Tu equipo está en la lista!');
+    set('[data-gracias-texto]','Te escribimos por WhatsApp para confirmar categorías y el registro de tus atletas. Los primeros equipos de cada categoría forman la generación fundadora.');
+    msg='Hola PuraSport, soy entrenador/a'+(d&&d.equipo?' de '+d.equipo:'')+' y acabo de pre-inscribir a mi equipo en la Liga.';
+    set('[data-share-titulo]','¿Conoces a otro entrenador?');
+  } else if(tipo==='familia'){
+    set('[data-gracias-titulo]','¡Ya apartaste su lugar!');
+    set('[data-gracias-texto]','Te escribimos por WhatsApp para contarte su categoría, su equipo y los siguientes pasos.');
+    msg='Hola PuraSport, acabo de pre-inscribir a mi hija/o en la Liga.';
+    set('[data-share-titulo]','Comparte con otro papá o mamá');
+    if(d&&d.categorias&&d.categorias.length){var box=document.querySelector('[data-gracias-cats]');box.classList.remove('hidden');box.innerHTML='<p class="font-bold">Según el año de nacimiento:</p><ul class="mt-2 space-y-1 text-white/85">'+d.categorias.map(function(c){return '<li>'+c.replace(/</g,'&lt;')+'</li>';}).join('')+'</ul>';}
+  } else if(tipo==='arbitro'){
+    set('[data-gracias-titulo]','¡Gracias por sumarte!');
+    set('[data-gracias-texto]','El encargado del Cuerpo Arbitral te contactará por WhatsApp con la fecha de la próxima capacitación.');
+    msg='Hola PuraSport, me pre-inscribí para arbitrar o estar en mesa en la Liga.';
+  }
+  var wa=document.querySelector('[data-wa-gracias]'); if(wa) wa.href+= '?text='+encodeURIComponent(msg);
+  var url=location.origin+'/?utm_source=compartir&utm_campaign=gracias';
+  var txt='Mira la Liga PuraSport: baloncesto para niñas y niños de 6 a 13 años, cada uno con los de su edad. ';
+  var sh=document.querySelector('[data-share]');
+  if(sh) sh.addEventListener('click',function(){
+    if(navigator.share){navigator.share({title:'Liga PuraSport',text:txt,url:url}).catch(function(){});}
+    else{location.href='https://wa.me/?text='+encodeURIComponent(txt+url);}
+    if(typeof fbq==='function') fbq('trackCustom','CompartirLiga',{tipo:tipo});
+  });
+});
+</script>
+</body>
+</html>

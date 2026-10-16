@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <title>Liga PuraSport · Cada niño compite con los de su edad</title>
+  <meta name="description" content="Liga de baloncesto formativo para niñas y niños de 6 a 13 años en El Salvador. Edad verificada con carnet digital, árbitros capacitados y estadísticas de cada jugador. Temporada 1 desde el 25 de octubre.">
+  <meta property="og:title" content="Liga PuraSport · Cada niño compite con los de su edad">
+  <meta property="og:description" content="Baloncesto formativo de 6 a 13 años. Edad verificada, árbitros capacitados y estadísticas de cada jugador. Temporada 1 desde el 25 de octubre.">
+  <meta property="og:url" content="{{siteUrl}}/">
+  <link rel="canonical" href="{{siteUrl}}/">
+<!--@include head-->
+</head>
+<body>
+<!--@include header-->
+<main id="contenido">
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden border-b border-white/10">
+    <div class="court-bg absolute inset-0" aria-hidden="true"></div>
+    <div class="glow absolute inset-0" aria-hidden="true"></div>
+    <div class="wrap relative grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[1.25fr_.75fr]">
+      <div>
+        <span class="eyebrow">{{temporadaNombre}} · Equipos Fundadores</span>
+        <h1 class="mt-5 font-display text-[2.6rem] font-black leading-[.98] tracking-tight sm:text-7xl">
+          Cada niño compite<br class="hidden sm:block"> con los <span class="text-brand">de su edad.</span>
+        </h1>
+        <p class="lead">Baloncesto formativo para niñas y niños de 6 a 13 años. Edad verificada con carnet digital, árbitros capacitados y estadísticas de cada jugador. Abierta a clubes, academias, colegios y comunidades.</p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="#preinscripcion" class="btn-primary" data-role-link="entrenador" data-track="cta_hero_entrenador">Inscribir a mi equipo</a>
+          <a href="#preinscripcion" class="btn-ghost" data-role-link="familia" data-track="cta_hero_familia">Quiero que mi hijo/a juegue</a>
+        </div>
+        <p class="mt-4 text-sm text-white/55">Pre-inscribirse no tiene costo. Entrada gratis para las familias.</p>
+      </div>
+      <div class="card border-brand/30 bg-night-800/80 backdrop-blur">
+        <p class="text-xs font-bold uppercase tracking-[.18em] text-white/50">Primeros partidos</p>
+        <p class="mt-1 font-display text-3xl font-black">25 de octubre</p>
+        <div class="mt-5 grid grid-cols-4 gap-2 text-center" data-countdown aria-live="off">
+          <div class="rounded-xl bg-night p-2"><b class="block font-display text-3xl font-black text-brand" data-cd="d">--</b><span class="text-[11px] text-white/55">días</span></div>
+          <div class="rounded-xl bg-night p-2"><b class="block font-display text-3xl font-black text-brand" data-cd="h">--</b><span class="text-[11px] text-white/55">horas</span></div>
+          <div class="rounded-xl bg-night p-2"><b class="block font-display text-3xl font-black text-brand" data-cd="m">--</b><span class="text-[11px] text-white/55">min</span></div>
+          <div class="rounded-xl bg-night p-2"><b class="block font-display text-3xl font-black text-brand" data-cd="s">--</b><span class="text-[11px] text-white/55">seg</span></div>
+        </div>
+        <dl class="mt-6 space-y-3 text-sm">
+          <div class="flex justify-between gap-4 border-t border-white/10 pt-3"><dt class="text-white/55">Temporada</dt><dd class="text-right font-semibold">{{temporadaFechas}}</dd></div>
+          <div class="flex justify-between gap-4 border-t border-white/10 pt-3"><dt class="text-white/55">Horario</dt><dd class="text-right font-semibold">Sábados y domingos</dd></div>
+          <div class="flex justify-between gap-4 border-t border-white/10 pt-3"><dt class="text-white/55">Sede</dt><dd class="text-right font-semibold">{{sede}}</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="relative border-t border-white/10 bg-night-800/70">
+      <div class="wrap grid grid-cols-2 gap-y-4 py-5 text-center sm:grid-cols-4">
+        <div><p class="font-display text-2xl font-black">6 – 13</p><p class="text-xs text-white/55">años · nacidos 2013–2020</p></div>
+        <div><p class="font-display text-2xl font-black">4</p><p class="text-xs text-white/55">categorías por año de nacimiento</p></div>
+        <div><p class="font-display text-2xl font-black">QR</p><p class="text-xs text-white/55">carnet digital con edad verificada</p></div>
+        <div><p class="font-display text-2xl font-black">$0</p><p class="text-xs text-white/55">entrada para las familias</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOLOR -->
+  <section class="py-16 sm:py-24">
+    <div class="wrap">
+      <span class="eyebrow">¿Te suena?</span>
+      <h2 class="h-section mt-4 max-w-3xl">Entrenan todo el año.<br>Y casi no juegan.</h2>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="card"><p class="font-display text-xl font-black">“Perdimos contra niños que claramente eran mayores.”</p><p class="mt-3 text-sm text-white/65">Sin verificación de edad, el que hace trampa gana y tu hijo pierde las ganas.</p></div>
+        <div class="card"><p class="font-display text-xl font-black">“Jugó cinco partidos en todo el año.”</p><p class="mt-3 text-sm text-white/65">Muchos entrenamientos y muy pocas oportunidades reales de competir.</p></div>
+        <div class="card"><p class="font-display text-xl font-black">“Nadie sabe cuántos puntos hizo.”</p><p class="mt-3 text-sm text-white/65">Sin estadísticas, el progreso de tu hijo no se ve ni se celebra.</p></div>
+        <div class="card"><p class="font-display text-xl font-black">“Su colegio no tiene equipo.”</p><p class="mt-3 text-sm text-white/65">Miles de niños quieren jugar y no tienen dónde.</p></div>
+      </div>
+      <p class="mt-10 max-w-3xl text-xl font-semibold text-white/85">La Liga PuraSport nació para resolver eso: <span class="text-brand">cada niño con los de su edad, jugando de verdad, con su progreso medido.</span></p>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="border-y border-white/10 bg-night-800 py-16 sm:py-24" id="que-recibes">
+    <div class="wrap">
+      <span class="eyebrow">Lo que tu equipo recibe</span>
+      <h2 class="h-section mt-4 max-w-3xl">Una liga pensada para que los niños jueguen, aprendan y quieran volver.</h2>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="card bg-night"><span class="num">1</span><h3 class="mt-4 text-lg font-bold">Cada niño con los de su edad</h3><p class="mt-2 text-sm text-white/65">Categorías por año de nacimiento y carnet digital con foto y QR. Se acabaron los pasados de edad.</p></div>
+        <div class="card bg-night"><span class="num">2</span><h3 class="mt-4 text-lg font-bold">Estadísticas de cada jugador</h3><p class="mt-2 text-sm text-white/65">Puntos, rebotes, robos y más, en cada partido.</p></div>
+        <div class="card bg-night"><span class="num">3</span><h3 class="mt-4 text-lg font-bold">Árbitros capacitados</h3><p class="mt-2 text-sm text-white/65">Cuerpo arbitral formado en las reglas de la Liga y un supervisor en la sede toda la jornada.</p></div>
+        <div class="card bg-night"><span class="num">4</span><h3 class="mt-4 text-lg font-bold">Reglas por edad</h3><p class="mt-2 text-sm text-white/65">Aro y balón por edad, tiempo de juego para todos y marcador oculto cuando la diferencia pasa de 25.</p></div>
+        <div class="card bg-night"><span class="num">5</span><h3 class="mt-4 text-lg font-bold">Abierta a todos</h3><p class="mt-2 text-sm text-white/65">Clubes, academias, colegios, centros escolares y equipos de comunidad.</p></div>
+        <div class="card bg-night"><span class="num">6</span><h3 class="mt-4 text-lg font-bold">Premios y reconocimiento</h3><p class="mt-2 text-sm text-white/65">Trofeo, medallas, MVP, Mejor Defensor/a, Mejor Tiro y el Premio Tsunami para cada equipo.</p></div>
+        <div class="card bg-night"><span class="num">7</span><h3 class="mt-4 text-lg font-bold">Fotos y videos</h3><p class="mt-2 text-sm text-white/65">Los mejores momentos de los partidos en las redes de PuraSport.</p></div>
+        <div class="card bg-night"><span class="num">8</span><h3 class="mt-4 text-lg font-bold">Entrada gratis</h3><p class="mt-2 text-sm text-white/65">Las familias entran sin costo a todos los partidos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS + CALCULADORA -->
+  <section class="py-16 sm:py-24" id="categorias">
+    <div class="wrap">
+      <span class="eyebrow">Categorías · {{temporadaNombre}}</span>
+      <h2 class="h-section mt-4">Cuatro categorías.<br>Una para cada etapa.</h2>
+      <p class="lead">Se definen por año de nacimiento. Gota y Arroyo son mixtas; Río y Océano tienen rama masculina y femenina según la demanda.</p>
+      <div class="mt-8 flex flex-col gap-3 rounded-2xl border border-brand/30 bg-brand/5 p-5 sm:flex-row sm:items-center">
+        <label for="calc-anio" class="font-bold">¿En qué año nació tu hija o hijo?</label>
+        <select id="calc-anio" class="input sm:max-w-[180px]" data-calc><option value="">Año…</option>{{@yearOptions}}</select>
+        <p class="text-white/80" data-calc-out aria-live="polite"></p>
+      </div>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{{@categoriasCards}}
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="border-y border-white/10 bg-night-800 py-16 sm:py-24" id="como-funciona">
+    <div class="wrap grid gap-12 lg:grid-cols-2">
+      <div>
+        <span class="eyebrow">Cómo funciona</span>
+        <h2 class="h-section mt-4">Cuatro pasos y tu equipo está dentro.</h2>
+        <ol class="mt-8 space-y-6">
+          <li class="flex gap-4"><span class="num">1</span><div><h3 class="font-bold">Pre-inscríbete aquí</h3><p class="mt-1 text-sm text-white/65">Toma un minuto. Te escribimos por WhatsApp para confirmar.</p></div></li>
+          <li class="flex gap-4"><span class="num">2</span><div><h3 class="font-bold">Registra al equipo y a los jugadores</h3><p class="mt-1 text-sm text-white/65">El entrenador sube la lista del equipo. Cada atleta recibe su carnet digital con QR.</p></div></li>
+          <li class="flex gap-4"><span class="num">3</span><div><h3 class="font-bold">Las familias firman la autorización</h3><p class="mt-1 text-sm text-white/65">Un enlace por WhatsApp, desde el celular. Sin papeles.</p></div></li>
+          <li class="flex gap-4"><span class="num">4</span><div><h3 class="font-bold">¡A jugar!</h3><p class="mt-1 text-sm text-white/65">Calendario publicado, árbitros en la cancha y estadísticas después de cada partido.</p></div></li>
+        </ol>
+      </div>
+      <div class="card bg-night">
+        <h3 class="font-display text-2xl font-black">Cómo se juega</h3>
+        <dl class="mt-5 divide-y divide-white/10 text-sm">
+          <div class="grid grid-cols-[110px_1fr] gap-4 py-3"><dt class="font-semibold text-white/55">Partidos</dt><dd>4 periodos de 8 minutos (10 en Océano), reloj continuo; se detiene en los últimos 2 minutos.</dd></div>
+          <div class="grid grid-cols-[110px_1fr] gap-4 py-3"><dt class="font-semibold text-white/55">Tiempo de juego</dt><dd>Gota, Arroyo y Río: mínimo 1 y máximo 2 periodos por jugador. Océano: todos entran.</dd></div>
+          <div class="grid grid-cols-[110px_1fr] gap-4 py-3"><dt class="font-semibold text-white/55">Hidratación</dt><dd>Pausa de hidratación a mitad de cada periodo en Gota, Arroyo y Río.</dd></div>
+          <div class="grid grid-cols-[110px_1fr] gap-4 py-3"><dt class="font-semibold text-white/55">Temporada</dt><dd>Fase de grupos y fase final. Objetivo: 6 a 8 partidos por equipo.</dd></div>
+          <div class="grid grid-cols-[110px_1fr] gap-4 py-3"><dt class="font-semibold text-white/55">Lista del equipo</dt><dd>10 a 15 atletas (Gota y Arroyo), 10 a 12 (Río), 8 a 12 (Océano).</dd></div>
+        </dl>
+        <p class="mt-4 rounded-xl bg-brand/10 p-3 text-sm text-white/80">Cada categoría se abre con 4 equipos o más. Mientras antes se inscriba tu equipo, antes sabemos qué categorías arrancan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVERSIÓN -->
+  <section class="py-16 sm:py-24" id="inversion">
+    <div class="wrap grid items-center gap-10 lg:grid-cols-2">
+      <div>
+        <span class="eyebrow">Inversión</span>
+        <h2 class="h-section mt-4">Menos de $2 por niño por partido.</h2>
+        <p class="lead">El equipo paga una inscripción y el arbitraje de cada partido. Dividido entre todo el equipo, es una de las formas más accesibles de que tu hijo compita de verdad.</p>
+      </div>
+      <div class="grid gap-4">
+        <div class="card"><p class="text-sm text-white/55">Inscripción por equipo</p><p class="font-display text-4xl font-black">$50 <span class="text-base font-semibold text-white/55">por temporada</span></p><p class="mt-2 text-sm text-white/65">Se paga una sola vez, antes del primer partido. Carnet digital del atleta: gratis.</p></div>
+        <div class="card"><p class="text-sm text-white/55">Arbitraje por equipo, por partido</p><p class="font-display text-4xl font-black">$15 <span class="text-base font-semibold text-white/55">Gota y Arroyo</span></p><p class="font-display text-4xl font-black">$18 <span class="text-base font-semibold text-white/55">Río y Océano</span></p><p class="mt-2 text-sm text-white/65">Entre 10 atletas: $1.50 a $1.80 por niño.</p></div>
+        <div class="card border-brand/50 bg-brand/10"><p class="font-bold">Garantía</p><p class="mt-1 text-sm text-white/80">Si tu categoría no reúne 4 equipos y no se abre, te devolvemos la inscripción completa.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁRBITROS -->
+  <section class="border-y border-white/10 bg-night-800 py-16 sm:py-20" id="arbitros">
+    <div class="wrap grid items-center gap-8 lg:grid-cols-[1.2fr_.8fr]">
+      <div>
+        <span class="eyebrow">Cuerpo Arbitral PuraSport</span>
+        <h2 class="h-section mt-4">¿Te gusta el baloncesto? Arbitra con nosotros.</h2>
+        <p class="lead">Buscamos árbitros, estadísticos y cronometristas para la generación fundadora. Te capacitamos en las reglas de la Liga, recibes uniforme y pago por partido.</p>
+      </div>
+      <div class="flex lg:justify-end"><a href="#preinscripcion" class="btn-primary w-full sm:w-auto" data-role-link="arbitro" data-track="cta_arbitros">Quiero arbitrar o estar en mesa</a></div>
+    </div>
+  </section>
+
+  <!-- PRE-INSCRIPCIÓN -->
+  <section class="py-16 sm:py-24" id="preinscripcion">
+    <div class="wrap">
+      <span class="eyebrow">Pre-inscripción · gratis y sin compromiso</span>
+      <h2 class="h-section mt-4">Aparta tu lugar en la {{temporadaNombre}}.</h2>
+      <p class="lead">Déjanos tus datos y te escribimos por WhatsApp. La inscripción oficial con carnet digital abre muy pronto.</p>
+      <div class="mt-8"><!--@include form--></div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS -->
+  <section class="border-t border-white/10 bg-night-800 py-16 sm:py-24" id="preguntas">
+    <div class="wrap max-w-3xl">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2 class="h-section mt-4">Lo que más nos preguntan.</h2>
+      <div class="mt-8 divide-y divide-white/10 rounded-2xl border border-white/10 bg-night">
+        <details class="group p-5"><summary class="cursor-pointer list-none font-bold">¿Mi hijo necesita estar en un equipo para participar?<span class="float-right text-brand group-open:rotate-45">+</span></summary><p class="mt-3 text-white/70">No. Pre-inscríbelo y, si no tiene equipo, la Liga lo ubica en uno cuando se reúnan suficientes niños de su categoría.</p></details>
+        <details class="group p-5"><summary class="cursor-pointer list-none font-bold">¿Cómo se verifica la edad?<span class="float-right text-brand group-open:rotate-45">+</span></summary><p class="mt-3 text-white/70">Cada atleta tiene un carnet digital con foto, año de nacimiento y QR, emitido con su partida de nacimiento o pasaporte. Cualquier equipo puede presentar una protesta gratis, y un atleta pasado de edad hace perder los partidos que jugó.</p></details>
+        <details class="group p-5"><summary class="cursor-pointer list-none font-bold">¿Puede jugar en una categoría mayor?<span class="float-right text-brand group-open:rotate-45">+</span></summary><p class="mt-3 text-white/70">Sí, con autorización de su familia, hasta en dos equipos por temporada. Nunca en una categoría menor a su edad.</p></details>
+        <details class="group p-5"><summary class="cursor-pointer list-none font-bold">Mi colegio no tiene programa de baloncesto, ¿puede participar?<span class="float-right text-brand group-open:rotate-45">+</span></summary><p class="mt-3 text-white/70">Sí. La Liga está abierta a colegios, centros escolares, clubes, academias y equipos de comunidad. Escríbenos y te ayudamos a armar el equipo.</p></details>
+        <details class="group p-5"><summary class="cursor-pointer list-none font-bold">¿Es una liga de la federación?<span class="float-right text-brand group-open:rotate-45">+</span></summary><p class="mt-3 text-white/70">Es una competencia privada e independiente, organizada para que más niños jueguen más partidos. No reemplaza ni interfiere con las competencias federadas; las complementa.</p></details>
+        <details class="group p-5"><summary class="cursor-pointer list-none font-bold">¿Cuánto cuesta para las familias?<span class="float-right text-brand group-open:rotate-45">+</span></summary><p class="mt-3 text-white/70">La entrada a los partidos es gratis. La inscripción y el arbitraje los paga el equipo; cada equipo decide cómo los reparte entre sus familias.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+<!--@include footer-->
+</body>
+</html>

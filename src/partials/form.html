@@ -1,0 +1,144 @@
+<!-- PRE-INSCRIPCIÓN — tres formularios separados (Netlify Forms los detecta por su atributo name).
+     Solo datos de adultos. De los menores se pide únicamente año de nacimiento y sexo. -->
+<div class="rounded-3xl border border-white/10 bg-night-800 p-5 sm:p-8">
+  <p class="text-sm font-bold uppercase tracking-[.16em] text-white/50">Paso 1</p>
+  <h3 class="mt-1 font-display text-2xl font-black sm:text-3xl">¿Quién eres?</h3>
+  <div class="mt-5 grid gap-3 sm:grid-cols-3" role="group" aria-label="Tipo de registro">
+    <button type="button" class="role-btn" data-role-btn="entrenador" aria-pressed="false">
+      <span class="text-lg font-bold">Soy entrenador/a</span>
+      <span class="text-sm text-white/60">Quiero inscribir a mi equipo, club, colegio o academia.</span>
+    </button>
+    <button type="button" class="role-btn" data-role-btn="familia" aria-pressed="false">
+      <span class="text-lg font-bold">Soy mamá o papá</span>
+      <span class="text-sm text-white/60">Quiero que mi hija o hijo juegue en la Liga.</span>
+    </button>
+    <button type="button" class="role-btn" data-role-btn="arbitro" aria-pressed="false">
+      <span class="text-lg font-bold">Quiero arbitrar</span>
+      <span class="text-sm text-white/60">Árbitro u oficial de mesa (estadísticas o reloj).</span>
+    </button>
+  </div>
+
+  <!-- ENTRENADORES -->
+  <form name="preregistro-entrenadores" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="liga-form mt-8 hidden" data-role="entrenador" novalidate>
+    <input type="hidden" name="form-name" value="preregistro-entrenadores">
+    <p class="hidden"><label>No llenar: <input name="bot-field"></label></p>
+    <input type="hidden" name="utm_source"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
+    <p class="text-sm font-bold uppercase tracking-[.16em] text-white/50">Paso 2 · Tu equipo</p>
+    <div class="mt-4 grid gap-4 sm:grid-cols-2">
+      <label class="field"><span>Nombre completo</span><input class="input" name="nombre" autocomplete="name" required></label>
+      <label class="field"><span>Nombre del equipo, club o colegio</span><input class="input" name="equipo" required></label>
+      <label class="field"><span>Tipo de organización</span>
+        <select class="input" name="tipo_organizacion" required>
+          <option value="">Selecciona…</option>
+          <option>Club</option><option>Academia</option><option>Colegio privado</option>
+          <option>Centro escolar público</option><option>Equipo municipal</option><option>Equipo de comunidad</option><option>Otro</option>
+        </select></label>
+      <label class="field"><span>Municipio</span><input class="input" name="municipio" placeholder="Ej. Antiguo Cuscatlán" required></label>
+    </div>
+    <fieldset class="mt-6">
+      <legend class="mb-2 text-sm font-semibold text-white/85">¿En qué categorías quieres inscribir equipo? <span class="font-normal text-white/50">(marca todas las que apliquen)</span></legend>
+      <div class="grid gap-2 sm:grid-cols-2" data-min-check="categorias">{{@categoriasChecks}}
+      </div>
+      <p class="mt-2 hidden text-sm text-red-400" data-error="categorias">Marca al menos una categoría.</p>
+    </fieldset>
+    <fieldset class="mt-6">
+      <legend class="mb-2 text-sm font-semibold text-white/85">¿Cuándo quieres empezar?</legend>
+      <div class="grid gap-2 sm:grid-cols-3">
+        <label class="check"><input type="radio" name="inicio" value="Temporada 1 (25 oct 2026)" required><span>Temporada 1 · 25 oct</span></label>
+        <label class="check"><input type="radio" name="inicio" value="Enero 2027"><span>Enero 2027</span></label>
+        <label class="check"><input type="radio" name="inicio" value="Quiero más información"><span>Quiero más información</span></label>
+      </div>
+    </fieldset>
+    <!--@include form-contacto-->
+  </form>
+
+  <!-- FAMILIAS -->
+  <form name="preregistro-familias" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="liga-form mt-8 hidden" data-role="familia" novalidate>
+    <input type="hidden" name="form-name" value="preregistro-familias">
+    <p class="hidden"><label>No llenar: <input name="bot-field"></label></p>
+    <input type="hidden" name="utm_source"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
+    <p class="text-sm font-bold uppercase tracking-[.16em] text-white/50">Paso 2 · Tus hijos</p>
+    <div class="mt-4 grid gap-4 sm:grid-cols-2">
+      <label class="field"><span>Tu nombre (mamá, papá o encargado)</span><input class="input" name="nombre" autocomplete="name" required></label>
+      <label class="field"><span>Municipio</span><input class="input" name="municipio" placeholder="Ej. Santa Tecla" required></label>
+    </div>
+    <p class="mt-6 text-sm text-white/60">Solo necesitamos el año de nacimiento y si es niña o niño. Con eso te decimos su categoría.</p>
+    <div class="mt-3 space-y-3" data-hijos>
+      <!-- 5 filas fijas para que el formulario sea estático; se muestran una a una -->
+      <div class="hijo-row grid grid-cols-[1fr_1fr] gap-3 rounded-2xl border border-white/10 p-4 sm:grid-cols-[1fr_1fr_1.4fr] sm:items-end" data-hijo="1">
+        <label class="field"><span>Hija/o 1 · año de nacimiento</span><select class="input" name="hijo1_anio" required data-anio><option value="">Año…</option>{{@yearOptions}}</select></label>
+        <label class="field"><span>Sexo</span><select class="input" name="hijo1_sexo" required><option value="">Elige</option><option>Niña</option><option>Niño</option></select></label>
+        <p class="col-span-2 min-h-[48px] rounded-xl bg-night px-4 py-3 text-sm text-white/60 sm:col-span-1" data-cat-out aria-live="polite">Elige el año para ver su categoría.</p>
+      </div>
+      <div class="hijo-row hidden grid-cols-[1fr_1fr] gap-3 rounded-2xl border border-white/10 p-4 sm:grid-cols-[1fr_1fr_1.4fr] sm:items-end" data-hijo="2">
+        <label class="field"><span>Hija/o 2 · año de nacimiento</span><select class="input" name="hijo2_anio" data-anio><option value="">Año…</option>{{@yearOptions}}</select></label>
+        <label class="field"><span>Sexo</span><select class="input" name="hijo2_sexo"><option value="">Elige</option><option>Niña</option><option>Niño</option></select></label>
+        <p class="col-span-2 min-h-[48px] rounded-xl bg-night px-4 py-3 text-sm text-white/60 sm:col-span-1" data-cat-out aria-live="polite">Elige el año para ver su categoría.</p>
+      </div>
+      <div class="hijo-row hidden grid-cols-[1fr_1fr] gap-3 rounded-2xl border border-white/10 p-4 sm:grid-cols-[1fr_1fr_1.4fr] sm:items-end" data-hijo="3">
+        <label class="field"><span>Hija/o 3 · año de nacimiento</span><select class="input" name="hijo3_anio" data-anio><option value="">Año…</option>{{@yearOptions}}</select></label>
+        <label class="field"><span>Sexo</span><select class="input" name="hijo3_sexo"><option value="">Elige</option><option>Niña</option><option>Niño</option></select></label>
+        <p class="col-span-2 min-h-[48px] rounded-xl bg-night px-4 py-3 text-sm text-white/60 sm:col-span-1" data-cat-out aria-live="polite">Elige el año para ver su categoría.</p>
+      </div>
+      <div class="hijo-row hidden grid-cols-[1fr_1fr] gap-3 rounded-2xl border border-white/10 p-4 sm:grid-cols-[1fr_1fr_1.4fr] sm:items-end" data-hijo="4">
+        <label class="field"><span>Hija/o 4 · año de nacimiento</span><select class="input" name="hijo4_anio" data-anio><option value="">Año…</option>{{@yearOptions}}</select></label>
+        <label class="field"><span>Sexo</span><select class="input" name="hijo4_sexo"><option value="">Elige</option><option>Niña</option><option>Niño</option></select></label>
+        <p class="col-span-2 min-h-[48px] rounded-xl bg-night px-4 py-3 text-sm text-white/60 sm:col-span-1" data-cat-out aria-live="polite">Elige el año para ver su categoría.</p>
+      </div>
+      <div class="hijo-row hidden grid-cols-[1fr_1fr] gap-3 rounded-2xl border border-white/10 p-4 sm:grid-cols-[1fr_1fr_1.4fr] sm:items-end" data-hijo="5">
+        <label class="field"><span>Hija/o 5 · año de nacimiento</span><select class="input" name="hijo5_anio" data-anio><option value="">Año…</option>{{@yearOptions}}</select></label>
+        <label class="field"><span>Sexo</span><select class="input" name="hijo5_sexo"><option value="">Elige</option><option>Niña</option><option>Niño</option></select></label>
+        <p class="col-span-2 min-h-[48px] rounded-xl bg-night px-4 py-3 text-sm text-white/60 sm:col-span-1" data-cat-out aria-live="polite">Elige el año para ver su categoría.</p>
+      </div>
+    </div>
+    <button type="button" class="btn-ghost mt-3 !min-h-[44px] text-sm" data-add-hijo>+ Agregar otra hija o hijo</button>
+    <input type="hidden" name="categorias_calculadas">
+    <fieldset class="mt-6">
+      <legend class="mb-2 text-sm font-semibold text-white/85">¿Ya juega en un equipo?</legend>
+      <div class="grid gap-2 sm:grid-cols-2">
+        <label class="check"><input type="radio" name="tiene_equipo" value="Sí, ya tiene equipo" required data-toggle-equipo><span>Sí, ya tiene equipo</span></label>
+        <label class="check"><input type="radio" name="tiene_equipo" value="No — que la Liga lo ubique en un equipo" data-toggle-equipo><span>No — quiero que la Liga lo ubique</span></label>
+      </div>
+      <label class="field mt-3 hidden" data-equipo-field><span>¿Cuál equipo, club o colegio?</span><input class="input" name="equipo_actual"></label>
+    </fieldset>
+    <!--@include form-contacto-->
+  </form>
+
+  <!-- ÁRBITROS Y OFICIALES DE MESA -->
+  <form name="preregistro-arbitros" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="liga-form mt-8 hidden" data-role="arbitro" novalidate>
+    <input type="hidden" name="form-name" value="preregistro-arbitros">
+    <p class="hidden"><label>No llenar: <input name="bot-field"></label></p>
+    <input type="hidden" name="utm_source"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content">
+    <p class="text-sm font-bold uppercase tracking-[.16em] text-white/50">Paso 2 · Cuerpo Arbitral PuraSport</p>
+    <div class="mt-4 grid gap-4 sm:grid-cols-2">
+      <label class="field"><span>Nombre completo</span><input class="input" name="nombre" autocomplete="name" required></label>
+      <label class="field"><span>Municipio</span><input class="input" name="municipio" required></label>
+    </div>
+    <fieldset class="mt-6">
+      <legend class="mb-2 text-sm font-semibold text-white/85">¿Qué te interesa? <span class="font-normal text-white/50">(puedes marcar varios)</span></legend>
+      <div class="grid gap-2 sm:grid-cols-3" data-min-check="rol">
+        <label class="check"><input type="checkbox" name="rol" value="Árbitro"><span>Árbitro</span></label>
+        <label class="check"><input type="checkbox" name="rol" value="Estadístico (mesa)"><span>Estadístico de mesa</span></label>
+        <label class="check"><input type="checkbox" name="rol" value="Reloj (mesa)"><span>Reloj / cronometrista</span></label>
+      </div>
+      <p class="mt-2 hidden text-sm text-red-400" data-error="rol">Marca al menos una opción.</p>
+    </fieldset>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+      <label class="field"><span>Experiencia</span>
+        <select class="input" name="experiencia" required>
+          <option value="">Selecciona…</option>
+          <option>Ninguna — quiero aprender</option><option>He trabajado en mesa</option>
+          <option>Árbitro de torneos locales</option><option>Árbitro federado</option>
+        </select></label>
+      <fieldset>
+        <legend class="mb-1.5 text-sm font-semibold text-white/85">Disponibilidad</legend>
+        <div class="grid grid-cols-2 gap-2">
+          <label class="check"><input type="checkbox" name="disponibilidad" value="Sábados"><span>Sábados</span></label>
+          <label class="check"><input type="checkbox" name="disponibilidad" value="Domingos"><span>Domingos</span></label>
+        </div>
+      </fieldset>
+    </div>
+    <label class="check mt-4"><input type="checkbox" name="mayor_de_edad" value="Sí" required><span>Confirmo que soy mayor de 18 años.</span></label>
+    <!--@include form-contacto-->
+  </form>
+</div>

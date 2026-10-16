@@ -1,0 +1,24 @@
+{
+  "_nota": "Único archivo de configuración. Cambie aquí y ejecute `npm run build`. Al migrar al servidor IIS de IT, actualice formEndpoint y siteUrl.",
+  "siteUrl": "https://liga.pura-sport.com",
+  "formEndpoint": "/",
+  "formMode": "netlify",
+  "metaPixelId": "2154446185140850",
+  "whatsappNumber": "50377335649",
+  "whatsappDisplay": "7733-5649",
+  "instagram": "https://www.instagram.com/purasport.oficial/",
+  "facebook": "https://www.facebook.com/purasport.oficial",
+  "handle": "@purasport.oficial",
+  "temporadaNombre": "Temporada 1",
+  "temporadaInicio": "2026-10-25T08:00:00-06:00",
+  "temporadaFechas": "25 de octubre – 13 de diciembre",
+  "sede": "Gimnasio del Colegio San Francisco, Antiguo Cuscatlán",
+  "mapsUrl": "https://share.google/t8NwiMtIzAWZe7pny",
+  "organizador": "Acción Life S.A. de C.V.",
+  "categorias": [
+    { "id": "gota",   "nombre": "Gota",   "anios": [2019, 2020], "edades": "6 y 7 años",   "aro": "Aro de 8 pies",  "balon": "Balón talla 5", "cancha": "Cancha transversal", "ramas": "Mixto" },
+    { "id": "arroyo", "nombre": "Arroyo", "anios": [2017, 2018], "edades": "8 y 9 años",   "aro": "Aro de 8 pies",  "balon": "Balón talla 5", "cancha": "Cancha transversal", "ramas": "Mixto" },
+    { "id": "rio",    "nombre": "Río",    "anios": [2015, 2016], "edades": "10 y 11 años", "aro": "Aro de 10 pies", "balon": "Balón talla 6", "cancha": "Cancha completa",    "ramas": "Masculino y femenino" },
+    { "id": "oceano", "nombre": "Océano", "anios": [2013, 2014], "edades": "12 y 13 años", "aro": "Aro de 10 pies", "balon": "Niñas talla 6 · niños talla 7", "cancha": "Cancha completa · triples", "ramas": "Masculino y femenino" }
+  ]
+}

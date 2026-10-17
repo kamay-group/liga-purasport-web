@@ -14,6 +14,9 @@
   body { @apply bg-night text-white font-sans antialiased; }
   ::selection { @apply bg-brand text-night; }
   :focus-visible { outline: 3px solid #00A8E3; outline-offset: 3px; }
+  [id], .liga-form { scroll-margin-top: 80px; }
+  body.menu-abierto { overflow: hidden; }
+  summary::-webkit-details-marker { display: none; }
 }
 
 @layer components {

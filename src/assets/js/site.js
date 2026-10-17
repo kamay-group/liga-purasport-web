@@ -51,7 +51,15 @@
     track("EligeTipoRegistro", { tipo: rol }, true);
   }
   $$("[data-role-btn]").forEach(function (b) { b.addEventListener("click", function () { elegirRol(b.dataset.roleBtn, true); }); });
-  $$("[data-role-link]").forEach(function (a) { a.addEventListener("click", function () { elegirRol(a.dataset.roleLink, false); }); });
+  $$("[data-role-link]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var f = $('.liga-form[data-role="' + a.dataset.roleLink + '"]');
+      if (!f) return; // en otras páginas el enlace lleva al inicio
+      e.preventDefault();
+      elegirRol(a.dataset.roleLink, false);
+      setTimeout(function () { f.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+    });
+  });
   var hashRol = (location.hash.match(/rol=(entrenador|familia|arbitro)/) || [])[1];
   if (hashRol) elegirRol(hashRol, false);
 
@@ -162,6 +170,24 @@
       $('[data-cd="s"]', cd).textContent = pad(s % 60);
     };
     tick(); setInterval(tick, 1000);
+  }
+
+  /* ---------- Menú en celular ---------- */
+  var mBtn = $("[data-menu-toggle]"), mPanel = $("[data-menu-panel]");
+  function menu(abrir) {
+    if (!mBtn || !mPanel) return;
+    mPanel.classList.toggle("hidden", !abrir);
+    mBtn.setAttribute("aria-expanded", String(abrir));
+    mBtn.setAttribute("aria-label", abrir ? "Cerrar menú" : "Abrir menú");
+    $("[data-icon-open]", mBtn).classList.toggle("hidden", abrir);
+    $("[data-icon-close]", mBtn).classList.toggle("hidden", !abrir);
+    document.body.classList.toggle("menu-abierto", abrir);
+  }
+  if (mBtn) {
+    mBtn.addEventListener("click", function () { menu(mBtn.getAttribute("aria-expanded") !== "true"); });
+    $$("[data-menu-link]").forEach(function (a) { a.addEventListener("click", function () { menu(false); }); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") menu(false); });
+    window.matchMedia("(min-width: 768px)").addEventListener("change", function (m) { if (m.matches) menu(false); });
   }
 
   /* ---------- Aviso de cookies ---------- */

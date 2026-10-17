@@ -19,7 +19,7 @@
     <div class="glow absolute inset-0" aria-hidden="true"></div>
     <div class="wrap relative grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[1.25fr_.75fr]">
       <div>
-        <span class="eyebrow">{{temporadaNombre}} · Equipos Fundadores</span>
+        <span class="eyebrow">Inscripciones abiertas</span>
         <h1 class="mt-5 font-display text-[2.6rem] font-black leading-[.98] tracking-tight sm:text-7xl">
           Cada niño compite<br class="hidden sm:block"> con los <span class="text-brand">de su edad.</span>
         </h1>
@@ -34,10 +34,10 @@
         <p class="text-xs font-bold uppercase tracking-[.18em] text-white/50">Primeros partidos</p>
         <p class="mt-1 font-display text-3xl font-black">25 de octubre</p>
         <div class="mt-5 grid grid-cols-4 gap-2 text-center" data-countdown aria-live="off">
-          <div class="rounded-xl bg-night p-2"><b class="block font-display text-3xl font-black text-brand" data-cd="d">--</b><span class="text-[11px] text-white/55">días</span></div>
-          <div class="rounded-xl bg-night p-2"><b class="block font-display text-3xl font-black text-brand" data-cd="h">--</b><span class="text-[11px] text-white/55">horas</span></div>
-          <div class="rounded-xl bg-night p-2"><b class="block font-display text-3xl font-black text-brand" data-cd="m">--</b><span class="text-[11px] text-white/55">min</span></div>
-          <div class="rounded-xl bg-night p-2"><b class="block font-display text-3xl font-black text-brand" data-cd="s">--</b><span class="text-[11px] text-white/55">seg</span></div>
+          <div class="rounded-xl bg-night p-2"><b class="block font-display text-3xl font-black text-brand" data-cd="d">--</b><span class="text-[13px] text-white/60">días</span></div>
+          <div class="rounded-xl bg-night p-2"><b class="block font-display text-3xl font-black text-brand" data-cd="h">--</b><span class="text-[13px] text-white/60">horas</span></div>
+          <div class="rounded-xl bg-night p-2"><b class="block font-display text-3xl font-black text-brand" data-cd="m">--</b><span class="text-[13px] text-white/60">min</span></div>
+          <div class="rounded-xl bg-night p-2"><b class="block font-display text-3xl font-black text-brand" data-cd="s">--</b><span class="text-[13px] text-white/60">seg</span></div>
         </div>
         <dl class="mt-6 space-y-3 text-sm">
           <div class="flex justify-between gap-4 border-t border-white/10 pt-3"><dt class="text-white/55">Temporada</dt><dd class="text-right font-semibold">{{temporadaFechas}}</dd></div>
@@ -163,9 +163,10 @@
   <!-- PRE-INSCRIPCIÓN -->
   <section class="py-16 sm:py-24" id="preinscripcion">
     <div class="wrap">
-      <span class="eyebrow">Pre-inscripción · gratis y sin compromiso</span>
+      <span class="eyebrow">Pre-inscripción gratis</span>
       <h2 class="h-section mt-4">Aparta tu lugar en la {{temporadaNombre}}.</h2>
       <p class="lead">Déjanos tus datos y te escribimos por WhatsApp. La inscripción oficial con carnet digital abre muy pronto.</p>
+      <p class="mt-4 max-w-2xl rounded-xl border border-brand/30 bg-brand/10 p-4 text-white/85"><b class="text-brand">Equipos Fundadores:</b> los equipos que jueguen la {{temporadaNombre}} serán reconocidos como la generación fundadora de la Liga PuraSport.</p>
       <div class="mt-8"><!--@include form--></div>
     </div>
   </section>
@@ -176,12 +177,12 @@
       <span class="eyebrow">Preguntas frecuentes</span>
       <h2 class="h-section mt-4">Lo que más nos preguntan.</h2>
       <div class="mt-8 divide-y divide-white/10 rounded-2xl border border-white/10 bg-night">
-        <details class="group p-5"><summary class="cursor-pointer list-none font-bold">¿Mi hijo necesita estar en un equipo para participar?<span class="float-right text-brand group-open:rotate-45">+</span></summary><p class="mt-3 text-white/70">No. Pre-inscríbelo y, si no tiene equipo, la Liga lo ubica en uno cuando se reúnan suficientes niños de su categoría.</p></details>
-        <details class="group p-5"><summary class="cursor-pointer list-none font-bold">¿Cómo se verifica la edad?<span class="float-right text-brand group-open:rotate-45">+</span></summary><p class="mt-3 text-white/70">Cada atleta tiene un carnet digital con foto, año de nacimiento y QR, emitido con su partida de nacimiento o pasaporte. Cualquier equipo puede presentar una protesta gratis, y un atleta pasado de edad hace perder los partidos que jugó.</p></details>
-        <details class="group p-5"><summary class="cursor-pointer list-none font-bold">¿Puede jugar en una categoría mayor?<span class="float-right text-brand group-open:rotate-45">+</span></summary><p class="mt-3 text-white/70">Sí, con autorización de su familia, hasta en dos equipos por temporada. Nunca en una categoría menor a su edad.</p></details>
-        <details class="group p-5"><summary class="cursor-pointer list-none font-bold">Mi colegio no tiene programa de baloncesto, ¿puede participar?<span class="float-right text-brand group-open:rotate-45">+</span></summary><p class="mt-3 text-white/70">Sí. La Liga está abierta a colegios, centros escolares, clubes, academias y equipos de comunidad. Escríbenos y te ayudamos a armar el equipo.</p></details>
-        <details class="group p-5"><summary class="cursor-pointer list-none font-bold">¿Es una liga de la federación?<span class="float-right text-brand group-open:rotate-45">+</span></summary><p class="mt-3 text-white/70">Es una competencia privada e independiente, organizada para que más niños jueguen más partidos. No reemplaza ni interfiere con las competencias federadas; las complementa.</p></details>
-        <details class="group p-5"><summary class="cursor-pointer list-none font-bold">¿Cuánto cuesta para las familias?<span class="float-right text-brand group-open:rotate-45">+</span></summary><p class="mt-3 text-white/70">La entrada a los partidos es gratis. La inscripción y el arbitraje los paga el equipo; cada equipo decide cómo los reparte entre sus familias.</p></details>
+        <details class="group px-5"><summary class="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-3 font-bold">¿Mi hijo necesita estar en un equipo para participar?<span class="shrink-0 text-2xl leading-none text-brand transition group-open:rotate-45" aria-hidden="true">+</span></summary><p class="pb-5 text-white/70">No. Pre-inscríbelo y, si no tiene equipo, la Liga lo ubica en uno cuando se reúnan suficientes niños de su categoría.</p></details>
+        <details class="group px-5"><summary class="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-3 font-bold">¿Cómo se verifica la edad?<span class="shrink-0 text-2xl leading-none text-brand transition group-open:rotate-45" aria-hidden="true">+</span></summary><p class="pb-5 text-white/70">Cada atleta tiene un carnet digital con foto, año de nacimiento y QR, emitido con su partida de nacimiento o pasaporte. Cualquier equipo puede presentar una protesta gratis, y un atleta pasado de edad hace perder los partidos que jugó.</p></details>
+        <details class="group px-5"><summary class="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-3 font-bold">¿Puede jugar en una categoría mayor?<span class="shrink-0 text-2xl leading-none text-brand transition group-open:rotate-45" aria-hidden="true">+</span></summary><p class="pb-5 text-white/70">Sí, con autorización de su familia, hasta en dos equipos por temporada. Nunca en una categoría menor a su edad.</p></details>
+        <details class="group px-5"><summary class="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-3 font-bold">Mi colegio no tiene programa de baloncesto, ¿puede participar?<span class="shrink-0 text-2xl leading-none text-brand transition group-open:rotate-45" aria-hidden="true">+</span></summary><p class="pb-5 text-white/70">Sí. La Liga está abierta a colegios, centros escolares, clubes, academias y equipos de comunidad. Escríbenos y te ayudamos a armar el equipo.</p></details>
+        <details class="group px-5"><summary class="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-3 font-bold">¿Es una liga de la federación?<span class="shrink-0 text-2xl leading-none text-brand transition group-open:rotate-45" aria-hidden="true">+</span></summary><p class="pb-5 text-white/70">Es una competencia privada e independiente, organizada para que más niños jueguen más partidos. No reemplaza ni interfiere con las competencias federadas; las complementa.</p></details>
+        <details class="group px-5"><summary class="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-3 font-bold">¿Cuánto cuesta para las familias?<span class="shrink-0 text-2xl leading-none text-brand transition group-open:rotate-45" aria-hidden="true">+</span></summary><p class="pb-5 text-white/70">La entrada a los partidos es gratis. La inscripción y el arbitraje los paga el equipo; cada equipo decide cómo los reparte entre sus familias.</p></details>
       </div>
     </div>
   </section>

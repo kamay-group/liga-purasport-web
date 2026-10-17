@@ -1,9 +1,9 @@
 <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:text-night">Saltar al contenido</a>
-<header class="sticky top-0 z-40 border-b border-white/10 bg-night/85 backdrop-blur">
-  <div class="wrap flex h-16 items-center justify-between gap-4">
-    <a href="{{ROOT}}" class="flex items-center gap-3" aria-label="Liga PuraSport, inicio">
-      <img src="{{ROOT}}assets/logo.svg" alt="PuraSport" class="h-8 w-auto sm:h-9">
-      <span class="hidden border-l border-white/20 pl-3 text-xs font-bold uppercase tracking-[.2em] text-white/70 sm:inline">Liga</span>
+<header class="sticky top-0 z-40 border-b border-white/10 bg-night/90 backdrop-blur">
+  <div class="wrap flex h-16 items-center justify-between gap-3">
+    <a href="{{ROOT}}" class="flex min-h-[44px] shrink-0 items-center gap-2.5 sm:gap-3" aria-label="Liga PuraSport, inicio">
+      <img src="{{ROOT}}assets/logo-wordmark.svg" alt="PuraSport" class="h-6 w-auto sm:h-7">
+      <span class="border-l border-white/25 pl-2.5 text-xs font-bold uppercase tracking-[.2em] text-white/80 sm:pl-3">Liga</span>
     </a>
     <nav class="hidden items-center gap-7 text-sm font-semibold text-white/75 md:flex" aria-label="Principal">
       <a href="{{ROOT}}#categorias" class="hover:text-white">Categorías</a>
@@ -12,6 +12,31 @@
       <a href="{{ROOT}}#arbitros" class="hover:text-white">Árbitros</a>
       <a href="{{ROOT}}#preguntas" class="hover:text-white">Preguntas</a>
     </nav>
-    <a href="{{ROOT}}#preinscripcion" class="btn-primary !min-h-[42px] !px-4 text-sm" data-track="cta_header">Pre-inscribirme</a>
+    <div class="flex items-center gap-2">
+      <a href="{{ROOT}}#preinscripcion" class="btn-primary !min-h-[44px] !px-4 text-sm" data-track="cta_header"><span class="sm:hidden">Inscribirme</span><span class="hidden sm:inline">Pre-inscribirme</span></a>
+      <button type="button" class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 md:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil" data-menu-toggle>
+        <svg data-icon-open width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg data-icon-close class="hidden" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Menú para celular -->
+  <div id="menu-movil" class="hidden h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/10 bg-night md:hidden" data-menu-panel>
+    <nav class="wrap py-4" aria-label="Menú">
+      <ul class="divide-y divide-white/10 text-lg font-semibold">
+        <li><a href="{{ROOT}}#categorias" class="flex min-h-[56px] items-center justify-between" data-menu-link>Categorías <span class="text-brand" aria-hidden="true">→</span></a></li>
+        <li><a href="{{ROOT}}#como-funciona" class="flex min-h-[56px] items-center justify-between" data-menu-link>Cómo funciona <span class="text-brand" aria-hidden="true">→</span></a></li>
+        <li><a href="{{ROOT}}#inversion" class="flex min-h-[56px] items-center justify-between" data-menu-link>Inversión <span class="text-brand" aria-hidden="true">→</span></a></li>
+        <li><a href="{{ROOT}}#arbitros" class="flex min-h-[56px] items-center justify-between" data-menu-link>Árbitros <span class="text-brand" aria-hidden="true">→</span></a></li>
+        <li><a href="{{ROOT}}#preguntas" class="flex min-h-[56px] items-center justify-between" data-menu-link>Preguntas <span class="text-brand" aria-hidden="true">→</span></a></li>
+      </ul>
+      <p class="mt-6 text-xs font-bold uppercase tracking-[.16em] text-white/50">Pre-inscripción gratis</p>
+      <div class="mt-3 grid gap-3">
+        <a href="{{ROOT}}#preinscripcion" class="btn-primary" data-role-link="entrenador" data-menu-link data-track="menu_entrenador">Inscribir a mi equipo</a>
+        <a href="{{ROOT}}#preinscripcion" class="btn-ghost" data-role-link="familia" data-menu-link data-track="menu_familia">Quiero que mi hijo/a juegue</a>
+        <a href="{{ROOT}}#preinscripcion" class="btn-ghost" data-role-link="arbitro" data-menu-link data-track="menu_arbitro">Quiero arbitrar</a>
+        <a href="https://wa.me/{{whatsappNumber}}" class="btn-wa" data-track="wa_menu">WhatsApp {{whatsappDisplay}}</a>
+      </div>
+    </nav>
   </div>
 </header>

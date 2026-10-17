@@ -1,0 +1,4 @@
+# Enlaces cortos para referidos por WhatsApp (solo Netlify; en IIS se replica con URL Rewrite)
+# liga.pura-sport.com/e/melvin  → formulario de entrenadores, con el referido registrado en utm_content
+/e/:ref   /?rol=entrenador&utm_source=whatsapp&utm_campaign=entrenadores&utm_content=:ref   302
+/f/:ref   /?rol=familia&utm_source=whatsapp&utm_campaign=familias&utm_content=:ref   302

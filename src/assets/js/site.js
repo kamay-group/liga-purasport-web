@@ -60,8 +60,34 @@
       setTimeout(function () { f.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
     });
   });
-  var hashRol = (location.hash.match(/rol=(entrenador|familia|arbitro)/) || [])[1];
-  if (hashRol) elegirRol(hashRol, false);
+  // Enlaces directos: ?rol=entrenador o #rol=entrenador abren ese formulario (p. ej. liga.pura-sport.com/e/melvin)
+  var hashRol = (location.hash.match(/rol=(entrenador|familia|arbitro)/) || [])[1] ||
+    (location.search.match(/[?&]rol=(entrenador|familia|arbitro)/) || [])[1];
+  if (hashRol) {
+    elegirRol(hashRol, false);
+    var fRol = $('.liga-form[data-role="' + hashRol + '"]');
+    if (fRol) setTimeout(function () { fRol.scrollIntoView({ behavior: "smooth", block: "start" }); }, 400);
+  }
+
+  /* ---------- Video: se reproduce sin sonido al verse en pantalla ---------- */
+  var vid = $("[data-video]"), snd = $("[data-video-sound]");
+  if (vid) {
+    var visto = false;
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (en) {
+          if (en.isIntersecting) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); if (!visto) { visto = true; track("VerVideo", { lugar: "inicio" }, true); } }
+          else vid.pause();
+        });
+      }, { threshold: 0.5 }).observe(vid);
+    }
+    if (snd) snd.addEventListener("click", function () {
+      vid.muted = !vid.muted;
+      if (!vid.muted) { vid.currentTime = 0; vid.loop = false; vid.play(); track("VideoConSonido", {}, true); }
+      snd.textContent = vid.muted ? "🔊 Activar sonido" : "🔇 Silenciar";
+    });
+    vid.addEventListener("ended", function () { vid.loop = true; vid.muted = true; vid.play(); if (snd) snd.textContent = "🔊 Activar sonido"; });
+  }
 
   /* ---------- Hijos: filas fijas que se muestran una a una ---------- */
   var addHijo = $("[data-add-hijo]");

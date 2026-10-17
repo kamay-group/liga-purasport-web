@@ -56,6 +56,32 @@
     </div>
   </section>
 
+  <!-- VIDEO -->
+  <section class="border-b border-white/10 bg-night-800 py-16 sm:py-24" id="video">
+    <div class="wrap grid items-center gap-10 md:grid-cols-2">
+      <div class="relative mx-auto w-full max-w-[340px] overflow-hidden rounded-3xl border border-white/10 bg-night shadow-2xl">
+        <video class="block aspect-[9/16] w-full object-cover" data-video muted loop playsinline preload="none"
+          poster="{{ROOT}}assets/video/liga-purasport-poster.jpg" aria-label="Video: así funciona la Liga PuraSport">
+          <source src="{{ROOT}}assets/video/liga-purasport.mp4" type="video/mp4">
+        </video>
+        <button type="button" class="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-night/85 px-5 py-3 text-sm font-bold text-white ring-1 ring-white/25 backdrop-blur" data-video-sound>🔊 Activar sonido</button>
+      </div>
+      <div>
+        <span class="eyebrow">Mira cómo funciona</span>
+        <h2 class="h-section mt-3">40 segundos y lo entiendes todo.</h2>
+        <ul class="mt-6 space-y-3 text-lg text-white/80">
+          <li>✓ Cada niño compite con los de su edad, verificada con QR.</li>
+          <li>✓ Árbitros capacitados y estadísticas de cada partido.</li>
+          <li>✓ Entrada gratis para las familias.</li>
+        </ul>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="#preinscripcion" class="btn-primary" data-role-link="entrenador" data-track="video_entrenador">Inscribir a mi equipo</a>
+          <a href="#preinscripcion" class="btn-ghost" data-role-link="familia" data-track="video_familia">Quiero que mi hijo/a juegue</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- DOLOR -->
   <section class="py-16 sm:py-24">
     <div class="wrap">
